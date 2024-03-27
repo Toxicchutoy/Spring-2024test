@@ -3,7 +3,9 @@
 
 let bubbles=[];
 function setup() {
-  createCanvas(600, 400);
+  var canvas = createCanvas(600, 400);
+
+  canvas.parent('project')
   
 //   for (let i = 0; i < 10; i++){
     
@@ -21,6 +23,8 @@ function setup() {
 
 function mouseDragged(){
   let r = random(10,40);
+  // let x = random(width);
+  // let y = random(height);
   let b = new Bubble(mouseX, mouseY,r);
   bubbles.push (b);
 }
@@ -54,7 +58,7 @@ class Bubble {
     strokeWeight(4);
     // noFill();
     // noStroke();
-    fill(100, 50);
+    fill(random(100), random(250),random(151));
     ellipse(this.x, this.y, this.r * 2);
   }
 }
